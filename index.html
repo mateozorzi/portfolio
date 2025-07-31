@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Proyectos Académicos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --secondary: #1e40af;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero-pattern {
+            background-image: radial-gradient(at 75% 10%, #bfdbfe 0, transparent 40%), 
+                              radial-gradient(at 20% 80%, #93c5fd 0, transparent 40%);
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .skill-chip {
+            transition: all 0.2s ease;
+        }
+        
+        .skill-chip:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold gradient-text">Portafolio de Mateo Zorzi Baggio</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#proyectos" class="text-gray-700 hover:text-blue-600 transition">Proyectos</a>
+                    <a href="#habilidades" class="text-gray-700 hover:text-blue-600 transition">Habilidades</a>
+                    <a href="#contacto" class="text-gray-700 hover:text-blue-600 transition">Contacto</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button type="button" class="mobile-menu-button p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-pattern py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
+                        <span class="gradient-text">Proyectos Académicos</span><br>
+                        de Ingeniería Informática
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Portafolio profesional con mis trabajos más destacados durante la carrera universitaria.
+                        Cada proyecto representa horas de aprendizaje y desarrollo técnico.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="#proyectos" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition">
+                            Ver Proyectos
+                        </a>
+                        <a href="https://github.com/mateozorzi" target="_blank" class="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition flex items-center">
+                            <i class="fab fa-github mr-2"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="img/foto cv.jpg" alt="Desarrollador trabajando en código con múltiples pantallas mostrando diferentes lenguajes de programación" class="rounded-xl shadow-xl float-animation">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="proyectos" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold gradient-text mb-4">Mis Proyectos Académicos</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Selección de trabajos realizados durante mi formación en la Facultad de Ingeniería Informática.
+                    Cada proyecto incluye tecnologías utilizadas y enlace al repositorio.
+                </p>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+                    <div class="relative h-68 overflow-hidden">
+                        <img src="img/shell.png" alt="Shell interactiva" class="w-full h-full object-cover">
+
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Shell</h3>
+                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">C</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Shell interactiva: invocación de comandos, redirecciones, variables de entorno, procesos en segundo plano.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">C</span>
+                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">Shell</span>
+                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">Unix</span>
+                        </div>
+                        <a href="https://github.com/mateozorzi/TP-shell" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                            Ver en GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+                    <div class="relative h-68 overflow-hidden">
+                        <img src="img/sched.png" alt="Red neuronal artificial visualizada con nodos interconectados" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Scheduler</h3>
+                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">C</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Scheduler: cambios de contexto, trapframe, call y ret, interrupciones, manejo de procesos.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">C</span>
+                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">Unix</span>
+                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">Kernel</span>
+                        </div>
+                        <a href="https://github.com/mateozorzi/TP-scheduler" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                            Ver en GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+                    <div class="relative h-68 overflow-hidden">
+                        <img src="img/fs.png" alt="Interfaz de aplicación móvil de comercio electrónico con productos" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">File System</h3>
+                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">C</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            File System: FUSE, persitencia en disco, creacion de archivos y carpetas, lectura y escritura, etc.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">C</span>
+                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">FUSE</span>
+                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">fs</span>
+                        </div>
+                        <a href="https://github.com/mateozorzi/TP-filesystem" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                            Ver en GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+                    <div class="relative h-68 overflow-hidden">
+                        <img src="img/ft.png" alt="Visualización de algoritmo de compresión de datos mostrando estructura de árbol" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">File Transfer</h3>
+                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Python</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            File Transfer: Implementación de un sistema de transferencia de archivos entre hosts, utilizando mininet para simular la red.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">Sockets</span>
+                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">Hosts</span>
+                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">Mininet</span>
+                        </div>
+                        <a href="https://github.com/mateozorzi/TP-File-Transfer-Redes" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                            Ver en GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+                    <div class="relative h-68 overflow-hidden">
+                        <img src="img/firewall.png" alt="Sistema de reconocimiento facial mostrando puntos característicos del rostro" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Firewall</h3>
+                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Python</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Firewall: Implementación de un firewall básico con filtrado de paquetes entre hosts, utilizando mininet para simular la red.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">Firewall</span>
+                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">Mininet</span>
+                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">Packet Filtering</span>
+                        </div>
+                        <a href="https://github.com/mateozorzi/TP-Firewall-Redes" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                            Ver en GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="habilidades" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold gradient-text mb-4">Tecnologías Dominadas</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Lenguajes de programación y herramientas que he utilizado en mis proyectos académicos.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+                    <i class="fab fa-java text-5xl mb-4 text-blue-600"></i>
+                    <span class="font-medium">Java</span>
+                </div>
+                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+                    <i class="fas fa-code text-5xl mb-4 text-blue-600"></i>
+                    <span class="font-medium">C/C++</span>
+                </div>
+                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+                    <i class="fab fa-python text-5xl mb-4 text-blue-600"></i>
+                    <span class="font-medium">Python</span>
+                </div>
+                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+                    <i class="fas fa-database text-5xl mb-4 text-blue-600"></i>
+                    <span class="font-medium">SQL/NoSQL</span>
+                </div>
+                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+                    <i class="fab fa-git-alt text-5xl mb-4 text-blue-600"></i>
+                    <span class="font-medium">Git</span>
+                </div>
+                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+                    <i class="fab fa-linux text-5xl mb-4 text-blue-600"></i>
+                    <span class="font-medium">Linux</span>
+                </div>
+                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+                    <i class="fas fa-terminal text-5xl mb-4 text-blue-600"></i>
+                    <span class="font-medium">CLI</span>
+                </div>
+                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+                    <i class="fas fa-project-diagram text-5xl mb-4 text-blue-600"></i>
+                    <span class="font-medium">Arquitectura SW</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold gradient-text mb-4">Contacto</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    ¿Interesado en mis proyectos? ¡Contáctame a través de mis redes profesionales!
+                </p>
+            </div>
+            
+            <div class="max-w-2xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <a href="https://www.linkedin.com/in/mateo-zorzi-baggio/" target="_blank" class="flex flex-col items-center p-6 bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition">
+                        <i class="fab fa-linkedin text-4xl mb-4 text-blue-600"></i>
+                        <h3 class="font-bold mb-2">LinkedIn</h3>
+                        <p class="text-gray-600 text-sm text-center">Perfil profesional</p>
+                    </a>
+                    <a href="https://github.com/mateozorzi" target="_blank" class="flex flex-col items-center p-6 bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition">
+                        <i class="fab fa-github text-4xl mb-4 text-blue-600"></i>
+                        <h3 class="font-bold mb-2">GitHub</h3>
+                        <p class="text-gray-600 text-sm text-center">Repositorios de código</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="font-bold text-lg gradient-text">Portafolio Académico</p>
+                    <p class="text-gray-400">Facultad de Ingeniería Informática</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://www.linkedin.com/in/mateo-zorzi-baggio/" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="https://github.com/mateozorzi" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400 text-sm">
+                <p>© <span id="current-year"></span> Portafolio Académico. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            // Implement mobile menu functionality here if needed
+            alert("Menú móvil - Implementar funcionalidad según necesidades");
+        });
+        
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Project card animation effects
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transition = 'all 0.3s ease';
+            });
+        });
+        
+        // Dynamic GitHub links (can be customized with real data)
+        document.querySelectorAll('a[href="#"]').forEach(link => {
+            if(link.textContent.includes('GitHub')) {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    alert("Enlace a GitHub - Reemplazar con tu ruta real del repositorio");
+                });
+            }
+        });
+    </script>
+</body>
+</html>
