@@ -1,440 +1,244 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio de Proyectos Académicos</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TS2XDC4S');</script>
-    <!-- End Google Tag Manager -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mateo Zorzi Baggio · Ingeniería Informática</title>
+<meta name="description" content="Estudiante de Ingeniería Informática (FIUBA). Backend, sistemas distribuidos y seguridad. Proyectos, investigación y CV.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDF0F3;
+  --ink:#16222E;
+  --muted:#4F5D6B;
+  --line:#C9D1D9;
+  --teal:#0D6B6B;
+  --signal:#F2C14E;
+  --band:#E2E7EC;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Schibsted Grotesk",system-ui,sans-serif;font-size:17px;line-height:1.55}
+a{color:var(--teal);text-underline-offset:3px}
+a:hover{color:var(--ink)}
+a:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7XLYGLL7YV"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+header{padding:72px 0 40px}
+h1{font-size:clamp(46px,8.5vw,104px);line-height:.92;letter-spacing:-.035em;font-weight:800;margin:0}
+h1 span{display:block}
+.role{font-size:clamp(19px,2.3vw,24px);max-width:36ch;margin:22px 0 0;color:var(--ink)}
+.links{display:flex;flex-wrap:wrap;gap:10px 22px;margin:28px 0 0;padding:0;list-style:none;font-weight:500}
+.cv{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.btn{display:inline-block;padding:10px 16px;border:2px solid var(--ink);color:var(--ink);text-decoration:none;font-weight:700;border-radius:4px}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn:hover{background:var(--signal);color:var(--ink);border-color:var(--ink)}
 
-    gtag('config', 'G-7XLYGLL7YV');
-    </script>
-    <style>
-        :root {
-            --primary: #3b82f6;
-            --secondary: #1e40af;
-            --dark: #1e293b;
-            --light: #f8fafc;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--light);
-            color: var(--dark);
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .gradient-text {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .hero-pattern {
-            background-image: radial-gradient(at 75% 10%, #bfdbfe 0, transparent 40%), 
-                              radial-gradient(at 20% 80%, #93c5fd 0, transparent 40%);
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .float-animation {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        .skill-chip {
-            transition: all 0.2s ease;
-        }
-        
-        .skill-chip:hover {
-            background-color: var(--primary);
-            color: white;
-        }
-    </style>
+h2{font-size:30px;letter-spacing:-.02em;margin:0 0 6px;font-weight:800}
+.lead{color:var(--muted);max-width:62ch;margin:0 0 28px}
+
+/* Research */
+.research{padding:40px 0 24px;border-top:2px solid var(--ink)}
+.research-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:32px;align-items:start}
+.research h3{font-size:22px;margin:0 0 4px}
+.research .where{color:var(--muted);margin:0}
+.research ul{margin:0;padding-left:18px}
+.research li{margin-bottom:8px}
+
+/* Stack */
+.stack-sec{padding:48px 0 32px}
+.stack{display:flex;flex-direction:column-reverse;border:2px solid var(--ink);border-radius:6px;overflow:hidden;background:var(--paper)}
+.layer{display:grid;grid-template-columns:190px 1fr;border-top:2px solid var(--ink)}
+.layer:last-child{border-top:0}
+.layer-name{padding:22px 18px;background:var(--band);border-right:2px solid var(--ink);font-weight:800;font-size:18px;line-height:1.2}
+.layer-name small{display:block;font-weight:500;color:var(--muted);font-size:14px;margin-top:6px}
+.layer:nth-child(odd) .layer-name{background:#D7DEE5}
+.projects{display:flex;flex-direction:column}
+.p{padding:20px 22px;border-top:1px solid var(--line)}
+.p:first-child{border-top:0}
+.p h3{font-size:19px;margin:0 0 4px;letter-spacing:-.01em}
+.p p{margin:0 0 8px;max-width:70ch}
+.tech{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.tech li{font-size:13.5px;font-weight:500;padding:2px 8px;border:1px solid var(--line);border-radius:3px;background:#fff}
+.p .repo{font-weight:700;font-size:15px;margin-left:2px}
+.p .note{font-size:14px;color:var(--muted)}
+.axis{display:flex;justify-content:space-between;color:var(--muted);font-size:14px;margin-top:10px}
+
+/* Skills */
+.skills{padding:24px 0 40px}
+.skills dl{display:grid;grid-template-columns:200px 1fr;gap:10px 24px;margin:0}
+.skills dt{font-weight:700}
+.skills dd{margin:0}
+
+footer{border-top:2px solid var(--ink);padding:28px 0 48px;color:var(--muted)}
+footer p{margin:0}
+
+@media (max-width:760px){
+  header{padding:48px 0 28px}
+  .research-grid{grid-template-columns:1fr;gap:16px}
+  .layer{grid-template-columns:1fr}
+  .layer-name{border-right:0;border-bottom:2px solid var(--ink);padding:14px 16px}
+  .p{padding:16px}
+  .skills dl{grid-template-columns:1fr;gap:2px}
+  .skills dd{margin-bottom:12px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .stack .layer{animation:rise .5s ease-out both}
+  .stack .layer:nth-child(1){animation-delay:.05s}
+  .stack .layer:nth-child(2){animation-delay:.15s}
+  .stack .layer:nth-child(3){animation-delay:.25s}
+  .stack .layer:nth-child(4){animation-delay:.35s}
+  .stack .layer:nth-child(5){animation-delay:.45s}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+}
+</style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <span class="text-xl font-bold gradient-text">Portafolio de Mateo Zorzi Baggio</span>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#proyectos" class="text-gray-700 hover:text-blue-600 transition">Proyectos</a>
-                    <a href="#habilidades" class="text-gray-700 hover:text-blue-600 transition">Habilidades</a>
-                    <a href="#contacto" class="text-gray-700 hover:text-blue-600 transition">Contacto</a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button type="button" class="mobile-menu-button p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
+<div class="wrap">
 
-    <!-- Hero Section -->
-    <section class="hero-pattern py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between">
-                <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
-                        <span class="gradient-text">Proyectos Académicos</span><br>
-                        de Ingeniería Informática
-                    </h1>
-                    <p class="text-lg text-gray-600 mb-8">
-                        Portafolio profesional con mis trabajos más destacados durante la carrera universitaria.
-                        Cada proyecto representa horas de aprendizaje y desarrollo técnico.
-                    </p>
-                    <div class="flex flex-wrap gap-3">
-                        <a href="#proyectos" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition">
-                            Ver Proyectos
-                        </a>
-                        <a href="https://github.com/mateozorzi" target="_blank" class="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition flex items-center">
-                            <i class="fab fa-github mr-2"></i> GitHub
-                        </a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <img src="img/foto cv.jpg" alt="Desarrollador trabajando en código con múltiples pantallas mostrando diferentes lenguajes de programación" class="rounded-xl shadow-xl float-animation">
-                </div>
-            </div>
-        </div>
-    </section>
+<header>
+  <h1><span>Mateo</span><span>Zorzi Baggio</span></h1>
+  <p class="role">Estudiante de Ingeniería Informática en la FIUBA. Me interesan el backend, los sistemas distribuidos y la seguridad informática. Busco mi primera posición como practicante o desarrollador trainee.</p>
+  <ul class="links">
+    <li><a href="mailto:mzorzibaggio@gmail.com">mzorzibaggio@gmail.com</a></li>
+    <li><a href="https://www.linkedin.com/in/mateozorzibaggio">LinkedIn</a></li>
+    <li><a href="https://github.com/mateozorzi">GitHub</a></li>
+    <li><a href="https://gitlab.com/mateozorzi">GitLab</a></li>
+    <li>Buenos Aires, Argentina</li>
+  </ul>
+  <div class="cv">
+    <a class="btn primary" href="cv/">Ver CV</a>
+    <a class="btn" href="cv/en.html" hreflang="en">Resume in English</a>
+  </div>
+</header>
 
-    <!-- Projects Section -->
-    <section id="proyectos" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold gradient-text mb-4">Mis Proyectos Académicos</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">
-                    Selección de trabajos realizados durante mi formación en la Facultad de Ingeniería Informática.
-                    Cada proyecto incluye tecnologías utilizadas y enlace al repositorio.
-                </p>
-            </div>
-            
-            <!-- Projects Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
-                    <div class="relative h-68 overflow-hidden">
-                        <img src="img/shell.png" alt="Shell interactiva" class="w-full h-full object-cover">
+<section class="research" aria-labelledby="inv">
+  <div class="research-grid">
+    <div>
+      <h2 id="inv">Investigación</h2>
+      <h3>SDD-BAICA</h3>
+      <p class="where">Trabajo Profesional y Práctica Profesional Supervisada en el LiMet (FIUBA), desde septiembre de 2026. Dirige el Mg. Ing. Carlos Fontela.</p>
+    </div>
+    <ul>
+      <li>Diseñamos, en un equipo de 4, un benchmark experimental que compara el desarrollo de software con agentes de IA con y sin Spec-Driven Development, en 4 condiciones con distinto nivel de especificación.</li>
+      <li>Medimos horas humanas, consumo de tokens, retrabajo, regresiones, cumplimiento de criterios de aceptación y mantenibilidad con SonarCloud y CodeScene.</li>
+      <li>Trabajamos en iteraciones semanales con backlog en GitLab; automaticé los mails de iteración, los tickets y las minutas con skills para agentes de IA.</li>
+    </ul>
+  </div>
+</section>
 
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold">Shell</h3>
-                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">C</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">
-                            Shell interactiva: invocación de comandos, redirecciones, variables de entorno, procesos en segundo plano.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">C</span>
-                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">Shell</span>
-                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">Unix</span>
-                        </div>
-                        <a href="https://github.com/mateozorzi/TP-shell" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
-                            Ver en GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
-                    <div class="relative h-68 overflow-hidden">
-                        <img src="img/sched.png" alt="Red neuronal artificial visualizada con nodos interconectados" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold">Scheduler</h3>
-                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">C</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">
-                            Scheduler: cambios de contexto, trapframe, call y ret, interrupciones, manejo de procesos.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">C</span>
-                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">Unix</span>
-                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">Kernel</span>
-                        </div>
-                        <a href="https://github.com/mateozorzi/TP-scheduler" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
-                            Ver en GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
-                    <div class="relative h-68 overflow-hidden">
-                        <img src="img/fs.png" alt="Interfaz de aplicación móvil de comercio electrónico con productos" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold">File System</h3>
-                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">C</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">
-                            File System: FUSE, persitencia en disco, creacion de archivos y carpetas, lectura y escritura, etc.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">C</span>
-                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">FUSE</span>
-                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">fs</span>
-                        </div>
-                        <a href="https://github.com/mateozorzi/TP-filesystem" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
-                            Ver en GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 4 -->
-                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
-                    <div class="relative h-68 overflow-hidden">
-                        <img src="img/ft.png" alt="Visualización de algoritmo de compresión de datos mostrando estructura de árbol" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold">File Transfer</h3>
-                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Python</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">
-                            File Transfer: Implementación de un sistema de transferencia de archivos entre hosts, utilizando mininet para simular la red.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">Sockets</span>
-                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">Hosts</span>
-                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">Mininet</span>
-                        </div>
-                        <a href="https://github.com/mateozorzi/TP-File-Transfer-Redes" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
-                            Ver en GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 5 -->
-                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
-                    <div class="relative h-68 overflow-hidden">
-                        <img src="img/firewall.png" alt="Sistema de reconocimiento facial mostrando puntos característicos del rostro" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold">Firewall</h3>
-                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Python</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">
-                            Firewall: Implementación de un firewall básico con filtrado de paquetes entre hosts, utilizando mininet para simular la red.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">Firewall</span>
-                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">Mininet</span>
-                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">Packet Filtering</span>
-                        </div>
-                        <a href="https://github.com/mateozorzi/TP-Firewall-Redes" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
-                            Ver en GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
-                        </a>
-                    </div>
-                </div>
+<section class="stack-sec" aria-labelledby="proy">
+  <h2 id="proy">Proyectos, de la base del stack hacia arriba</h2>
+  <p class="lead">Ordené los proyectos por la capa del sistema en la que trabajan: desde el kernel hasta la aplicación desplegada, con la seguridad atravesando todo.</p>
 
-                <!-- Project 6 -->
-                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
-                    <div class="relative h-68 overflow-hidden">
-                        <img src="img/need4speed.png" alt="Juego de carreras tipo arcade." class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold">Need4Speed</h3>
-                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">C++</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">
-                            Need4Speed: Implementacion de un juego de carreras tipo arcade, utilizando una arquitectura cliente-servidor.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">C++</span>
-                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">Client-Server</span>
-                            <span class="skill-chip text-xs bg-gray-100 px-3 py-1 rounded-full">Game Development</span>
-                        </div>
-                        <a href="https://github.com/mateozorzi/TP_Taller_de_Programacion-Need-For-Speed" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
-                            Ver en GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-                
-            </div>
-            
-        </div>
-    </section>
+  <div class="stack">
+    <!-- column-reverse: el primer layer del HTML queda abajo -->
+    <div class="layer">
+      <div class="layer-name">Sistema operativo<small>C · Linux</small></div>
+      <div class="projects">
+        <article class="p">
+          <h3>Shell interactiva</h3>
+          <p>Ejecución de comandos con pipes, redirecciones, variables de entorno y procesos en segundo plano. <a class="repo" href="https://github.com/mateozorzi/TP-shell">Código</a></p>
+          <ul class="tech"><li>C</li><li>fork / exec / wait</li><li>Linux</li></ul>
+        </article>
+        <article class="p">
+          <h3>Scheduler a nivel kernel</h3>
+          <p>Cambios de contexto, trapframes e interrupciones, con políticas FIFO y Round Robin. <a class="repo" href="https://github.com/mateozorzi/TP-scheduler">Código</a></p>
+          <ul class="tech"><li>C</li><li>Planificación de CPU</li></ul>
+        </article>
+        <article class="p">
+          <h3>Sistema de archivos con FUSE</h3>
+          <p>Creación de archivos y directorios, lectura, escritura y persistencia en disco. <a class="repo" href="https://github.com/mateozorzi/TP-filesystem">Código</a></p>
+          <ul class="tech"><li>C</li><li>FUSE</li></ul>
+        </article>
+      </div>
+    </div>
 
-    <!-- Skills Section -->
-    <section id="habilidades" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold gradient-text mb-4">Tecnologías Dominadas</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">
-                    Lenguajes de programación y herramientas que he utilizado en mis proyectos académicos.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
-                    <i class="fab fa-java text-5xl mb-4 text-blue-600"></i>
-                    <span class="font-medium">Java</span>
-                </div>
-                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
-                    <i class="fas fa-code text-5xl mb-4 text-blue-600"></i>
-                    <span class="font-medium">C/C++</span>
-                </div>
-                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
-                    <i class="fab fa-python text-5xl mb-4 text-blue-600"></i>
-                    <span class="font-medium">Python</span>
-                </div>
-                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
-                    <i class="fas fa-database text-5xl mb-4 text-blue-600"></i>
-                    <span class="font-medium">SQL/NoSQL</span>
-                </div>
-                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
-                    <i class="fab fa-git-alt text-5xl mb-4 text-blue-600"></i>
-                    <span class="font-medium">Git</span>
-                </div>
-                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
-                    <i class="fab fa-linux text-5xl mb-4 text-blue-600"></i>
-                    <span class="font-medium">Linux</span>
-                </div>
-                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
-                    <i class="fas fa-terminal text-5xl mb-4 text-blue-600"></i>
-                    <span class="font-medium">CLI</span>
-                </div>
-                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
-                    <i class="fas fa-project-diagram text-5xl mb-4 text-blue-600"></i>
-                    <span class="font-medium">Arquitectura SW</span>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="layer">
+      <div class="layer-name">Red<small>Python · Mininet</small></div>
+      <div class="projects">
+        <article class="p">
+          <h3>Transferencia confiable de archivos</h3>
+          <p>Stop-and-Wait y Go-Back-N con ACKs y checksums sobre una red simulada con pérdida de paquetes. <a class="repo" href="https://github.com/mateozorzi/TP-File-Transfer-Redes">Código</a></p>
+          <ul class="tech"><li>Python</li><li>UDP</li><li>Mininet</li></ul>
+        </article>
+        <article class="p">
+          <h3>Firewall configurable</h3>
+          <p>Filtrado de tráfico entre hosts según reglas definidas por el usuario. <a class="repo" href="https://github.com/mateozorzi/TP-Firewall-Redes">Código</a></p>
+          <ul class="tech"><li>Python</li><li>Mininet</li></ul>
+        </article>
+      </div>
+    </div>
 
-    <!-- Contact Section -->
-    <section id="contacto" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold gradient-text mb-4">Contacto</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">
-                    ¿Interesado en mis proyectos? ¡Contáctame a través de mis redes profesionales!
-                </p>
-                <p class="text-gray-600 max-w-2xl mx-auto">
-                    Para contacto directo: mzorzibaggio@gmail.com
-                </p>
-            </div>
-            
-            <div class="max-w-2xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <a href="https://www.linkedin.com/in/mateo-zorzi-baggio/" target="_blank" class="flex flex-col items-center p-6 bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition">
-                        <i class="fab fa-linkedin text-4xl mb-4 text-blue-600"></i>
-                        <h3 class="font-bold mb-2">LinkedIn</h3>
-                        <p class="text-gray-600 text-sm text-center">Perfil profesional</p>
-                    </a>
-                    <a href="https://github.com/mateozorzi" target="_blank" class="flex flex-col items-center p-6 bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition">
-                        <i class="fab fa-github text-4xl mb-4 text-blue-600"></i>
-                        <h3 class="font-bold mb-2">GitHub</h3>
-                        <p class="text-gray-600 text-sm text-center">Repositorios de código</p>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="layer">
+      <div class="layer-name">Concurrencia y distribuidos<small>Rust · Go · C++</small></div>
+      <div class="projects">
+        <article class="p">
+          <h3>Sistema distribuido de bicicletas compartidas</h3>
+          <p>Usuarios y estaciones modelados como actores que se comunican por TCP, con tests de integración sobre actores reales.</p>
+          <ul class="tech"><li>Rust</li><li>Actix</li><li>Tokio</li></ul>
+        </article>
+        <article class="p">
+          <h3>Algoritmo de consenso Raft</h3>
+          <p>Elección de líder, replicación de log, persistencia y snapshots, depurado con go test -race.</p>
+          <ul class="tech"><li>Go</li><li>Consenso distribuido</li></ul>
+        </article>
+        <article class="p">
+          <h3>Need4Speed, juego de carreras multijugador</h3>
+          <p>Servidor que sincroniza varias partidas simultáneas por sockets, cliente con física y editor gráfico de circuitos. Equipo de 3. <a class="repo" href="https://github.com/mateozorzi/TP_Taller_de_Programacion-Need-For-Speed">Código</a></p>
+          <ul class="tech"><li>C++</li><li>SDL2</li><li>Box2D</li><li>Qt</li><li>Hilos</li></ul>
+        </article>
+      </div>
+    </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <p class="font-bold text-lg gradient-text">Portafolio Académico</p>
-                    <p class="text-gray-400">Facultad de Ingeniería Informática</p>
-                </div>
-                <div class="flex space-x-6">
-                    <a href="https://www.linkedin.com/in/mateo-zorzi-baggio/" class="text-gray-400 hover:text-white">
-                        <i class="fab fa-linkedin text-xl"></i>
-                    </a>
-                    <a href="https://github.com/mateozorzi" class="text-gray-400 hover:text-white">
-                        <i class="fab fa-github text-xl"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400 text-sm">
-                <p>© <span id="current-year"></span> Portafolio Académico. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
+    <div class="layer">
+      <div class="layer-name">Aplicación y despliegue<small>Ruby · Kubernetes</small></div>
+      <div class="projects">
+        <article class="p">
+          <h3>Bot de Telegram con lenguaje natural y API REST</h3>
+          <p>Bot para consultar un catálogo de películas y series que entiende pedidos en lenguaje natural con un LLM. API en Sinatra y PostgreSQL con tests en RSpec y Cucumber, y pipeline de GitLab CI que despliega en Kubernetes en test y producción.</p>
+          <ul class="tech"><li>Ruby</li><li>Sinatra</li><li>PostgreSQL</li><li>Docker</li><li>Kubernetes</li><li>GitLab CI</li></ul>
+          <p class="note">Repositorio privado de la materia.</p>
+        </article>
+      </div>
+    </div>
 
-    <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
-            // Implement mobile menu functionality here if needed
-        });
-        
-        // Set current year in footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-        
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        
-        // Project card animation effects
-        const projectCards = document.querySelectorAll('.project-card');
-        projectCards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                card.style.transition = 'all 0.3s ease';
-            });
-        });
-        
-        // Dynamic GitHub links (can be customized with real data)
-        document.querySelectorAll('a[href="#"]').forEach(link => {
-            if(link.textContent.includes('GitHub')) {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    alert("Enlace a GitHub - Reemplazar con tu ruta real del repositorio");
-                });
-            }
-        });
-    </script>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TS2XDC4S"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    <div class="layer">
+      <div class="layer-name">Seguridad<small>Atraviesa todo el stack</small></div>
+      <div class="projects">
+        <article class="p">
+          <h3>Pentest greybox</h3>
+          <p>Cadena de ataque sobre un sistema de laboratorio: explotación de Apache Axis2, escalamiento local de privilegios y exposición de credenciales, con informe técnico y ejecutivo basado en OWASP.</p>
+          <ul class="tech"><li>Pentesting</li><li>OWASP</li><li>Linux</li></ul>
+        </article>
+        <article class="p">
+          <h3>Análisis de malware y PKI</h3>
+          <p>Análisis del RAT njRAT en un laboratorio aislado, y autenticación TLS mutua en Apache con PKI propia y control de acceso por certificado.</p>
+          <ul class="tech"><li>Análisis de malware</li><li>TLS 1.3</li><li>PKI</li><li>Wireshark</li></ul>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="skills" aria-labelledby="hab">
+  <h2 id="hab">Habilidades</h2>
+  <p class="lead">Lo que usé en los proyectos de esta página.</p>
+  <dl>
+    <dt>Lenguajes</dt><dd>C, C++, Rust, Go, Python, Ruby, Java, Smalltalk, SQL</dd>
+    <dt>Backend y datos</dt><dd>APIs REST, Sinatra, PostgreSQL, MySQL, Swagger</dd>
+    <dt>DevOps</dt><dd>Git, GitLab CI/CD, Docker, Kubernetes, Linux</dd>
+    <dt>Testing y calidad</dt><dd>RSpec, Cucumber (BDD), tests de integración, SonarCloud, CodeScene</dd>
+    <dt>Idiomas</dt><dd>Español nativo, inglés intermedio-avanzado (B2)</dd>
+  </dl>
+</section>
+
+<footer>
+  <p>Escribime a <a href="mailto:mzorzibaggio@gmail.com">mzorzibaggio@gmail.com</a> o por <a href="https://www.linkedin.com/in/mateozorzibaggio">LinkedIn</a>.</p>
+</footer>
+
+</div>
 </body>
 </html>
