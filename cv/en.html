@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Mateo Zorzi Baggio - Resume</title>
+<style>
+@page { size: A4; margin: 13mm 15mm; }
+* { box-sizing: border-box; }
+body { font-family: "Liberation Sans", Arial, Helvetica, sans-serif; font-size: 9.6pt; line-height: 1.32; color: #111; margin: 0; }
+h1 { font-size: 20pt; margin: 0 0 2px; letter-spacing: .2px; }
+.role { font-weight: bold; font-size: 10.5pt; margin: 0 0 3px; }
+.contact { margin: 0; }
+a { color: #111; text-decoration: none; }
+h2 { font-size: 10.5pt; text-transform: uppercase; letter-spacing: .6px; border-bottom: 1px solid #333; padding-bottom: 1px; margin: 11px 0 5px; }
+p { margin: 0 0 4px; }
+.item { margin: 0 0 5px; break-inside: avoid; }
+h2 { break-after: avoid; }
+.head { display: flex; justify-content: space-between; gap: 10px; }
+.head b { font-size: 9.9pt; }
+.meta { color: #333; white-space: nowrap; }
+.sub { color: #333; font-style: italic; }
+ul { margin: 2px 0 0; padding-left: 15px; }
+li { margin: 0 0 1.5px; }
+.skills li { margin-bottom: 1px; }
+@media screen{body{max-width:820px;margin:24px auto;padding:0 20px}} @media print{.noprint{display:none}} a{color:#0D6B6B}
+</style></head>
+<body>
+<div class="noprint" style="display:flex;gap:12px;margin:0 0 14px"><a href="../">&larr; Portfolio</a><a href="#" onclick="window.print();return false">Save as PDF</a><a href="./">Español</a></div>
+<h1>Mateo Zorzi Baggio</h1>
+<p class="role">Computer Engineering Student · Backend, Distributed Systems &amp; Security</p>
+<p class="contact">Buenos Aires, Argentina · mzorzibaggio@gmail.com · <a href="https://www.linkedin.com/in/mateozorzibaggio">linkedin.com/in/mateozorzibaggio</a> · <a href="https://github.com/mateozorzi">github.com/mateozorzi</a> · <a href="https://gitlab.com/mateozorzi">gitlab.com/mateozorzi</a></p>
+<h2>Summary</h2>
+<p>Senior Computer Engineering student at the University of Buenos Aires (expected graduation: 2027), focused on backend development, distributed systems and information security. Worked in teams of 4 to 6 building a REST API with CI/CD and Kubernetes deployment, concurrent systems in Rust and Go, and lab penetration tests. Currently researching AI-assisted software development at LiMet (FIUBA). Looking for my first role as a software engineering intern or trainee.</p>
+<h2>Education</h2>
+<div class="item">
+<div class="head"><span><b>B.S. in Computer Engineering (Ingeniería en Informática)</b> — School of Engineering, University of Buenos Aires (FIUBA)</span><span class="meta">2021 – present · Exp. 2027</span></div>
+<p>Relevant coursework: Operating Systems, Computer Networks, Concurrent Programming, Distributed Systems, Cryptography and Information Security, Software Engineering II.</p>
+</div>
+<h2>Experience</h2>
+<div class="item">
+<div class="head"><span><b>Undergraduate Researcher — Capstone Project &amp; Supervised Professional Practice</b></span><span class="meta">Sep 2026 – present</span></div>
+<div class="sub">LiMet, Software Development and Maintenance Methods Lab (FIUBA)</div>
+<ul>
+<li>Designing SDD-BAICA, a controlled benchmark comparing AI-agent-assisted development with and without Spec-Driven Development across 4 conditions with different levels of specification detail, in a team of 4 advised by Prof. Carlos Fontela.</li>
+<li>Defining the cost and quality metrics: human hours, token usage, rework, regressions, acceptance-criteria compliance and maintainability measured with SonarCloud and CodeScene.</li>
+<li>Running the project in weekly iterations with a GitLab backlog, meeting minutes and time tracking; automated iteration emails, tickets and minutes using AI-agent skills.</li>
+</ul>
+</div>
+<h2>Projects</h2>
+<div class="item">
+<div class="head"><span><b>Natural-language Telegram bot and REST API</b> · Ruby, Sinatra, PostgreSQL, Docker, Kubernetes, GitLab CI</span><span class="meta">2026</span></div>
+<ul>
+<li>Telegram bot to browse a catalog of movies and TV shows that understands natural-language requests through an LLM integration (Groq).</li>
+<li>Ruby REST API (Sinatra, Sequel, PostgreSQL) documented with Swagger, with RSpec unit tests and Cucumber/Gherkin BDD acceptance tests.</li>
+<li>GitLab CI/CD pipeline: tests, secret scanning with gitleaks, tag-versioned Docker images, automatic deploy to a Kubernetes test environment and manual-approval release to production.</li>
+<li>Three environments (local, test, production), logging with Sumo Logic, uptime monitoring with UptimeRobot and static analysis with SonarCloud and RuboCop.</li>
+</ul>
+</div>
+<div class="item">
+<div class="head"><span><b>Distributed bike-sharing system</b> · Rust, Actix, Tokio</span><span class="meta">2026</span></div>
+<ul>
+<li>Users and stations modeled as actors communicating over TCP in a two-crate Cargo workspace; integration tests with real actors for the rent and return flows.</li>
+</ul>
+</div>
+<div class="item">
+<div class="head"><span><b>Raft consensus algorithm</b> · Go</span><span class="meta">2026</span></div>
+<ul>
+<li>Leader election, log replication, persistence and snapshots, validated against the course test suite and debugged with go test -race.</li>
+</ul>
+</div>
+<div class="item">
+<div class="head"><span><b>Penetration testing, malware analysis and PKI</b> · Information security, team of 6</span><span class="meta">2026</span></div>
+<ul>
+<li>Greybox penetration test on a lab system: attack chain from Apache Axis2 exploitation to local privilege escalation (CVE-2009-2692) and database credential exposure, with technical and executive reports based on OWASP.</li>
+<li>Analysis of the njRAT remote access trojan in an isolated lab (C2 connection and persistence) and executive report on impact and mitigations.</li>
+<li>Mutual TLS authentication on Apache with a custom PKI (Root CA and SubCA), access control by certificate attributes and TLS 1.3 traffic decryption with Wireshark.</li>
+</ul>
+</div>
+<div class="item">
+<div class="head"><span><b>Need4Speed: multiplayer racing game</b> · C++, SDL2, Qt, Box2D · Team of 3</span><span class="meta"><a href="https://github.com/mateozorzi/TP_Taller_de_Programacion-Need-For-Speed">repository</a></span></div>
+<ul>
+<li>Server that synchronizes multiple concurrent races with several players, using sockets and thread-based concurrency.</li>
+<li>Client with SDL2 rendering, Box2D vehicle physics, Qt menus and a graphical track editor.</li>
+</ul>
+</div>
+<div class="item">
+<div class="head"><span><b>Operating systems and networking</b> · C, Python, Linux, Mininet</span><span class="meta"><a href="https://github.com/mateozorzi?tab=repositories">repositories</a></span></div>
+<ul>
+<li>Interactive shell in C with pipes, redirections, environment variables and background processes; kernel-level scheduler (context switches, trapframes, interrupts) with FIFO and Round Robin policies; FUSE file system with disk persistence.</li>
+<li>Reliable file transfer with Stop-and-Wait and Go-Back-N over a lossy Mininet network, and a rule-based firewall.</li>
+</ul>
+</div>
+<h2>Technical Skills</h2>
+<ul class="skills">
+<li><b>Languages:</b> C, C++, Rust, Go, Python, Ruby, Java, Smalltalk, SQL</li>
+<li><b>Backend &amp; data:</b> REST APIs, Sinatra, PostgreSQL, MySQL, Swagger</li>
+<li><b>DevOps:</b> Git, GitLab CI/CD, Docker, Kubernetes, Linux</li>
+<li><b>Testing &amp; quality:</b> RSpec, Cucumber (BDD), integration testing, SonarCloud, CodeScene, RuboCop</li>
+<li><b>Security:</b> penetration testing, malware analysis, PKI and TLS, Wireshark, OWASP</li>
+<li><b>Systems:</b> concurrency, actor model, distributed consensus, processes, file systems, network protocols</li>
+<li><b>Methodologies:</b> agile iterative development, BDD, Spec-Driven Development, AI-agent-assisted development</li>
+</ul>
+<h2>Languages</h2>
+<p>Spanish: native · English: upper-intermediate (B2)</p>
+</body></html>
